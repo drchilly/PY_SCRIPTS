@@ -1,5 +1,5 @@
 #
-#This is an example of a script developed to connect and backup cisco device configs using python
+#Connect and backup cisco device configs using python
 #
 import paramiko
 import ftplib
@@ -20,7 +20,7 @@ def disable_paging(remote_conn):
 if __name__ == '__main__':
 
 # VARIABLES THAT NEED CHANGED
-#ip = '10.18.113.16'
+#ip = 'x.x.x.x'
 #ipaddress = open('list.txt')
     username = 'dragan.ilic'
     password = '?????'
@@ -48,17 +48,15 @@ with open (r'list.txt', 'r') as ip_input:
 # Strip the initial router prompt
         output = remote_conn.recv(1000)
 
-# See what we have
-#print output
 
 # Turn off paging
 disable_paging(remote_conn)
 
-# Now let's try to send the router a command
+# Send the router a command
 # remote_conn.send("\n")
 # remote_conn.send("show ip int brief\n")
 
-# These are only required if you need an enable password to login
+# Required if you need an enable password to login
 # remote_conn.send("en\n")
 # remote_conn.send("cisco\n")
 
