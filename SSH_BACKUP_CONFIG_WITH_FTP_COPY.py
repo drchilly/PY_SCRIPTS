@@ -1,6 +1,6 @@
 #
 #Connect and backup cisco device configs using python
-#
+#Import some of required modules
 import paramiko
 import ftplib
 import time
