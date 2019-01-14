@@ -11,9 +11,9 @@ def main():
     # Use the appropriate network driver to connect to the device:
     driver = napalm.get_network_driver('ios')
 
-    # Connect:
-    device = driver(hostname='192.168.24.1', username='dragan.ilic',
-                    password='wersdf123!')
+    # Connect: PUT ADEQUATE USERNAME AND password
+    device = driver(hostname='192.168.24.1', username='????',
+                    password='????')
 
     print ('Opening ...')
     device.open()
