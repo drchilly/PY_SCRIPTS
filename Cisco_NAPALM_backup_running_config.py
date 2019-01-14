@@ -1,4 +1,6 @@
 import napalm
+import ciscosparkapi
+import env_user
 import sys
 import os
 from time import gmtime, strftime
@@ -12,9 +14,10 @@ def main():
     driver = napalm.get_network_driver('ios')
 
     # Connect: PUT ADEQUATE USERNAME AND password
-    device = driver(hostname='192.168.24.1', username='????',
-                    password='????')
+    device = driver(hostname='192.168.24.1', username='dragan.ilic',
+                    password='wersdf123!')
 
+    spark = ciscosparkapi.CiscoSparkAPI(access_token=env_user.SPARK_ACCESS_TOKEN)
     print ('Opening ...')
     device.open()
     ios_facts = device.get_facts()
@@ -45,6 +48,10 @@ def main():
     f = open("Backup/" + ios_facts['hostname'] + "." + time, 'w')
     f.write(runn_final)
     f.close
+    message = spark.messages.create(env_user.SPARK_ROOM_ID,
+              #files=[next_data_file],
+              text='BACKUP COMPLETED')
+    print(message)
     device.close()
 if __name__ == '__main__':
     main()
