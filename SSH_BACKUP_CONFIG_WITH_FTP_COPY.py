@@ -85,8 +85,8 @@ print
 print ip + ' config backup in place'
 print
 #filename = 'tas_%s.txt' % str(ip)
-#filename = os.path.join('GigaKOM-', mytime)
-filename = ("GigaKOM-" + mytime)
+#filename = os.path.join('NETVIRT-', mytime)
+filename = ("NETVIRT-" + mytime)
 filepath = os.path.join('configs', ip, filename)
 
 if not os.path.exists(os.path.dirname(filepath)):

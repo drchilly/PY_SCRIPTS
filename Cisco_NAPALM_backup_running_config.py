@@ -14,8 +14,8 @@ def main():
     driver = napalm.get_network_driver('ios')
 
     # Connect: PUT ADEQUATE USERNAME AND password
-    device = driver(hostname='192.168.24.1', username='dragan.ilic',
-                    password='wersdf123!')
+    device = driver(hostname='????', username='????',
+                    password='????')
 
     spark = ciscosparkapi.CiscoSparkAPI(access_token=env_user.SPARK_ACCESS_TOKEN)
     print ('Opening ...')
