@@ -19,5 +19,5 @@ device.load_merge_candidate(config='interface Loopback201\ndescription TEST\nip 
             
 print (device.compare_config())
 device.close()
-if __name__ == '__change_config__':
+if __name__ == '__main__':
     change_config()
